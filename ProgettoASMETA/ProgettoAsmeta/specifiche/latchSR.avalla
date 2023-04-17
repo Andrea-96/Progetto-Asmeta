@@ -1,0 +1,82 @@
+//// starting scenario
+scenario latchSR.avalla
+load latchSR.asm
+set clock_ := true;
+set set_ := false;
+set reset_ := false;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+set clock_ := true;
+set set_ := true;
+set reset_ := false;
+step
+check setAsync_ = true;
+check resetAsync_ = false;
+check q = true;
+check notq = false;
+check bistableStatus = true;
+set clock_ := true;
+set set_ := false;
+set reset_ := false;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+check q = true;
+check notq = false;
+check bistableStatus = true;
+set clock_ := true;
+set set_ := false;
+set reset_ := true;
+step
+check setAsync_ = false;
+check resetAsync_ = true;
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set clock_ := true;
+set set_ := false;
+set reset_ := false;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set clock_ := false;
+set set_ := true;
+set reset_ := false;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set clock_ := false;
+set set_ := false;
+set reset_ := false;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set clock_ := false;
+set set_ := false;
+set reset_ := true;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set clock_ := false;
+set set_ := false;
+set reset_ := false;
+step
+check setAsync_ = false;
+check resetAsync_ = false;
+check q = false;
+check notq = true;
+check bistableStatus = false;
+step

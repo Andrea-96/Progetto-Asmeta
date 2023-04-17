@@ -1,0 +1,37 @@
+//// starting scenario
+scenario bistabileAsincronoSR.avalla
+load bistabileAsincronoSR.asm
+set set_ := false;
+set reset_ := false;
+step
+set set_ := true;
+set reset_ := false;
+step
+check q = true;
+check notq = false;
+check bistableStatus = true;
+set set_ := false;
+set reset_ := false;
+step
+check q = true;
+check notq = false;
+check bistableStatus = true;
+set set_ := false;
+set reset_ := true;
+step
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set set_ := false;
+set reset_ := false;
+step
+check q = false;
+check notq = true;
+check bistableStatus = false;
+set set_ := true;
+set reset_ := false;
+step
+check q = true;
+check notq = false;
+check bistableStatus = true;
+step
